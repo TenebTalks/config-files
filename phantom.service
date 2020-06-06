@@ -1,0 +1,14 @@
+[Unit]
+Description=Phantom service
+
+[Service]
+User=username <----change to your login
+Group=username <----change to your login
+WorkingDirectory=/FOLDER/WHERE/PHANTOM/IS
+ExecStart=/bin/sh -c "./phantom-linux -server SERVER_ADDRESS_HERE:19132"
+Type=simple
+Restart=always
+
+
+[Install]
+WantedBy=multi-user.target

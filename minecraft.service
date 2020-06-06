@@ -1,0 +1,17 @@
+[Unit]
+Description=Minecraft Service
+After=network.target
+
+[Service]
+User=username
+Group=groupname (probably username)
+
+Type=Simple
+
+WorkingDirectory=/this/will/be/a/folder/called/bedrockserver/
+ExecStart=/bin/sh -c "./bedrock_server"
+TimeoutStopSec=20
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
